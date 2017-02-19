@@ -111,7 +111,7 @@ sha1: {0}
 date: {1}
 ```
 Consider changing your password or [not using passwords at all](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) and [including sensitive files in your .gitignore](https://git-scm.com/docs/gitignore)
-This issue was created automatically by[], excuse any false positive.<br>
+This issue was created automatically by[GithubLeakAlert](https://github.com/misterch0c/GithubLeakAlert), excuse any false positive.<br>
 
 Better prevent than cure (;
 <p align="center">
@@ -122,6 +122,7 @@ Better prevent than cure (;
 		if not leak['created_issue']:
 			#issue = g.create_issue(leak['owner'],leak['repository'],"Credentials found in this repository",body=base64.b64decode(post).decode('utf-8'))
 			#leaks.update_one({'_id':leak['_id']},{'$set':{'created_issue': True}})
+			ci = g.create_issue("d0rker","test","tesddtt",body=post)
 			print(ci)
 
 
