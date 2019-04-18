@@ -51,10 +51,10 @@ def getsftp(r,g):
 		rrepo=str(repo.repository).split('/')[1]
 		print("+++++++++++++++")
 		repobj=g.repository(rowner,rrepo)
-		com=repobj.commits(None,repo.path)
+		com=repobj.iter_commits(None,repo.path)
 		for ev in com:
 			comitdate=ev.commit.author['date']
-			htmlink = ev.commit.url
+			htmlink = ev.commit.html_url
 
 
 		head = {'Authorization': 'token %s' % tok}
